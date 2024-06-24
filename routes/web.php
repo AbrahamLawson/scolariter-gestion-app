@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NiveauxController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,4 +15,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::prefix('niveaux')->group(function () {
+        Route::get('/', [NiveauxController::class, 'index'])->name('niveaux');
+    });
 });
