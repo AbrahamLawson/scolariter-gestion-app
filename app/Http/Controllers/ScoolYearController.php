@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
-class NiveauxController extends Controller
+class ScoolYearController extends Controller
 {
     public function __invoke(Request $request): View
     {
-        return view('niveaux.list');
+        return view('settings.index');
     }
+
 }
