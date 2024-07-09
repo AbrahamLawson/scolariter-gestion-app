@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateSchoolYearController;
 use App\Http\Controllers\NiveauxController;
 use App\Http\Controllers\ScoolYearController;
 use Illuminate\Support\Facades\Route;
@@ -18,10 +19,15 @@ Route::middleware([
     })->name('dashboard');
 
     Route::prefix('niveaux')->group(function () {
-        Route::get('/', NiveauxController::class)->name('niveaux');
+        Route::get('/', NiveauxController::class)
+            ->name('niveaux');
     });
 
     Route::prefix('settings')->group(function () {
-        Route::get('/', ScoolYearController::class)->name('settings');
+        Route::get('/', ScoolYearController::class)
+            ->name('settings');
     });
+
+    Route::get('/create-school-year', CreateSchoolYearController::class)
+        ->name('settings.create-school-year');
 });
