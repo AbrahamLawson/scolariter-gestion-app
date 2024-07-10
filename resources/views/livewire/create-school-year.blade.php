@@ -4,6 +4,7 @@
         <div>
             <label for="name">Libeller de l'année scolaire</label>
             <input type="text" name="name" id="name" class="block mt-1 rounded-md"/>
+
         </div>
     </form>
 </div>
