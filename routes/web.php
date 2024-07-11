@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\CreateSchoolYearController;
 use App\Http\Controllers\NiveauxController;
-use App\Http\Controllers\ScoolYearController;
+use App\Http\Controllers\SchoolYearController;
+use App\Http\Controllers\StoreYearController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,10 +25,16 @@ Route::middleware([
     });
 
     Route::prefix('settings')->group(function () {
-        Route::get('/', ScoolYearController::class)
+        Route::get('/', SchoolYearController::class)
             ->name('settings');
     });
 
-    Route::get('/create-school-year', CreateSchoolYearController::class)
-        ->name('settings.create-school-year');
+    Route::prefix('school-year')->group(function () {
+        Route::get('/create-school-year', CreateSchoolYearController::class)
+            ->name('settings.create-school-year');
+
+        Route::post('/store-school-year', StoreYearController::class)
+            ->name('settings.store-year');
+    });
+
 });

@@ -1,17 +1,17 @@
-<div class="mg-5">
-    <div class="bg-fuchsia-300 overflow-hidden shadow-xl sm:rounded-lg p-8">
+ <div class="mg-5 ">
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8">
         {{-- Titre et Boutton Créer --}}
         <div class="flex justify-between items-center">
-            <h4 class="text-white font-bold">Liste des Années scolaires</h4>
-            <a href="{{route('settings.create-school-year')}}" class="bg-fuchsia-500 hover:bg-fuchsia-700 text-white font-bold py-2 px-4 rounded">
+            <h4 class="text-black font-bold">Liste des Années scolaires</h4>
+            <a href="{{route('settings.create-school-year')}}" class="hover:bg-fuchsia-700 text-black font-bold py-2 px-4 rounded border border-solid border-fuchsia-700">
                 Nouvelle Année Scolaire
             </a>
         </div>
 
         {{-- Message apres une action --}}
         <div class="flex flex-col">
-            <div class="block p-2 bg-emerald-400 text-white rounded-sm shadow-sm mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+            <div class="block p-2 bg-emerald-400 text-white rounded-sm shadow-sm mt-2 max-w-md mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </div>
         </div>
 
