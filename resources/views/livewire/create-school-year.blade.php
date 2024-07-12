@@ -1,16 +1,3 @@
-@if (session('status'))
-    <x-modal id="confirmation-modal" maxWidth="lg">
-        @slot('title')
-            Confirmation
-        @endslot
-
-        @slot('content')
-            {{ session('status') }}
-        @endslot
-
-    </x-modal>
-@endif
-
 <div class="p-3 bg-white shadow-sm">
     {{-- Formulaire --}}
     <form method="POST" action="{{ route('settings.store-year') }}">
