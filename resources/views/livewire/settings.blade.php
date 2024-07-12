@@ -10,9 +10,11 @@
 
         {{-- Message apres une action --}}
         <div class="flex flex-col">
-            <div class="block p-2 bg-emerald-400 text-white rounded-sm shadow-sm mt-2 max-w-md mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </div>
+            @if(session('success'))
+                <div class="block p-2 bg-emerald-400 text-white rounded-sm shadow-sm mt-2 max-w-md mx-auto">
+                    {{ session('success') }}
+                </div>
+            @endif
         </div>
 
         {{-- Tableau --}}

@@ -23,6 +23,6 @@ final class StoreYearController extends Controller
 
         $this->createYearCommandHandler->handle($command);
 
-        return redirect()->back()->with('success', 'Année ajouter avec succès');
+        return redirect()->route('settings')->with('success', 'Année ajouter avec succès');
     }
 }
