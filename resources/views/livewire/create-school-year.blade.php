@@ -5,7 +5,12 @@
         @method('POST')
         <div class="p-5 flex flex-col items-center justify-center text-sm font-bold">
             <label for="school_year">Libeller de l'année scolaire</label>
-            <input type="text" name="school_year" id="school_year" class="block mt-1 rounded-md border-gray-200" required/>
+            <input type="text" name="school_year" id="school_year" value="{{ old('school_year') }}" class="block mt-1 rounded-md border-gray-200" required/>
+            @error('school_year')
+                <div class="text-sm text-red-500 mt-2">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
 
         <div class="p-3 flex items-center justify-center">
