@@ -18,9 +18,8 @@ final class StoreYearController extends Controller
     }
     public function __invoke(StoreYearRequest $request): RedirectResponse
     {
-        $command = (new CreateYearCommand(
-           $request->get('school_year')
-        ));
+        $schoolYear = (int) $request->get('school_year');
+        $command = new CreateYearCommand($schoolYear);
 
         $this->createYearCommandHandler->handle($command);
 
