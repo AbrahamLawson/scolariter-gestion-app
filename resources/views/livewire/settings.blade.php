@@ -23,25 +23,34 @@
                 <table class="min-w-full text-center">
                     <thead class="border-b bg-gray-50">
                         <tr>
-                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Année</th>
-                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Année</th>
-                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Année</th>
-                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Année</th>
+                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Id</th>
+                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Année Scolaire</th>
+                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Statut</th>
+                            <th class="text-sm font-medium text-gray-900 py-6 px-6">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <tr class="border-b-4 border-gray-200">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2020</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2021</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2022</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2023</td>
-                        </tr>
-                        <tr class="border-b-4 border-gray-200">
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2020</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2021</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2022</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2023</td>
-                        </tr>
+                        @forelse($schoolYearList as $schoolYear)
+                            <tr class="border-b-4 border-gray-200">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$schoolYear->id}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$schoolYear->school_year}}</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    @if($schoolYear->active === '1')
+                                        <span class="p-1 bg-green-600 text-white text-sm rounded-sm"> Actif </span>
+                                    @else
+                                        <span class="p-1 bg-red-600 text-white text-sm rounded-sm"> Inactif </span>
+                                    @endif
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    @if($schoolYear->active === '1')
+                                        <button class="p-1 border-2 border-solid border-red-600 rounded-sm hover:bg-red-600 "> Rendre Inactif</button>
+                                    @else
+                                        <button class="p-1 border-2 border-solid border-green-600 rounded-sm hover:bg-green-600"> Rendre Actif </button>
+                                    @endif
+                                </td>
+                            </tr>
+                            @empty
+                        @endforelse
                     </tbody>
                 </table>
 
