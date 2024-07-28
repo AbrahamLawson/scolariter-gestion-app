@@ -55,12 +55,10 @@
                 </table>
 
                 {{-- Pagination --}}
-
+                <div class="mt-1">
+                    {{$schoolYearList->links()}}
+                </div>
             </div>
         </div>
-
     </div>
-
-
-
 </div>
