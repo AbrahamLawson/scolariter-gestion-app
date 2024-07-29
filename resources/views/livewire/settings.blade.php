@@ -2,7 +2,9 @@
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8">
         {{-- Titre et Boutton Créer --}}
         <div class="flex justify-between items-center">
-            <h4 class="text-black font-bold">Liste des Années scolaires</h4>
+            {{-- Search Bar --}}
+            <input type="text" name="school_year" id="school_year" value="{{ old('school_year') }}" placeholder="Search" class="block mt-1 rounded-md border-gray-200" />
+
             <a href="{{route('settings.create-school-year')}}" class="hover:bg-fuchsia-700 text-black font-bold py-2 px-4 rounded border border-solid border-fuchsia-700">
                 Nouvelle Année Scolaire
             </a>
