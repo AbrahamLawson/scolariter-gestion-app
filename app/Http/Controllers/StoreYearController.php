@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Commands\CreateYearCommand;
-use App\Handlers\CreateYearCommandHandler;
+use App\Application\SchoolYears\Commands\CreateYearCommand;
+use App\Application\SchoolYears\Handlers\CreateYearCommandHandler;
 use App\Http\Requests\StoreYearRequest;
 use Illuminate\Http\RedirectResponse;
 

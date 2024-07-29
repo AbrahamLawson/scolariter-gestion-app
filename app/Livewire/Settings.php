@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\SchoolYear;
+use App\Domain\SchoolYears\Models\SchoolYear;
 use Livewire\Component;
 
 class Settings extends Component
