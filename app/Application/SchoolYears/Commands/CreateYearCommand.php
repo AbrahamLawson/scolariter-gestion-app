@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Commands;
+namespace App\Application\SchoolYears\Commands;
 
 final class CreateYearCommand
 {

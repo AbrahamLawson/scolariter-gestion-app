@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Handlers;
+namespace App\Application\SchoolYears\Handlers;
 
-use App\Commands\CreateYearCommand;
-use App\Models\SchoolYear;
+use App\Application\SchoolYears\Commands\CreateYearCommand;
+use App\Domain\SchoolYears\Models\SchoolYear;
 use Illuminate\Support\Facades\DB;
 
 final class CreateYearCommandHandler
